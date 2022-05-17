@@ -86,14 +86,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(191, 124);
+            this.ClientSize = new System.Drawing.Size(185, 122);
             this.Controls.Add(this.btnSinavHazirla);
             this.Controls.Add(this.btnGecmisSinavlar);
             this.Controls.Add(this.txtOgrenciNo);
             this.Controls.Add(this.rTxtGecmisSinavlar);
             this.Controls.Add(this.btnSoruHazirlama);
             this.Name = "frmAdmin";
-            this.Text = "frmAdmin";
+            this.Text = "Admin Ekranı";
             this.ResumeLayout(false);
             this.PerformLayout();
 

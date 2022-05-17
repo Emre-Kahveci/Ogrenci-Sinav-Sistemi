@@ -236,7 +236,7 @@
             this.Controls.Add(this.PBSoru);
             this.Controls.Add(this.btnYeniSoru);
             this.Name = "frmSinavCozum";
-            this.Text = "frmSinavCozum";
+            this.Text = "Sınav Çözüm Ekranı";
             ((System.ComponentModel.ISupportInitialize)(this.PBSoru)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

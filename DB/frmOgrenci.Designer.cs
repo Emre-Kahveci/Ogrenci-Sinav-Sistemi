@@ -158,7 +158,7 @@
             this.Controls.Add(this.txtSoruSayisi);
             this.Controls.Add(this.btnSoruCozum);
             this.Name = "frmOgrenci";
-            this.Text = "frmOgrenci";
+            this.Text = "Öğrenci Ekranı";
             this.Load += new System.EventHandler(this.frmOgrenci_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sinavBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();

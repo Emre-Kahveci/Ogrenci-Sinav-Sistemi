@@ -279,7 +279,7 @@
             this.Controls.Add(this.lblB);
             this.Controls.Add(this.lblA);
             this.Name = "frmSoruHazirlama";
-            this.Text = "frmSoruHazirlama";
+            this.Text = "Soru Hazırlama Ekranı";
             ((System.ComponentModel.ISupportInitialize)(this.PBSoru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUnite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numKonu)).EndInit();

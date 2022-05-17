@@ -625,7 +625,7 @@
             this.Controls.Add(this.gBoxUnite1);
             this.Controls.Add(this.btnRaporAl);
             this.Name = "frmAnalizRaporu";
-            this.Text = "frmAnalizRaporu";
+            this.Text = "Analiz Raporu Ekranı";
             this.gBoxUnite1.ResumeLayout(false);
             this.gBoxUnite1.PerformLayout();
             this.gBoxUnite2.ResumeLayout(false);

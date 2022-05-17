@@ -222,7 +222,7 @@
             this.Controls.Add(this.rTxtSoruMetin);
             this.Controls.Add(this.PBSoru);
             this.Name = "frmSoruCozum";
-            this.Text = "frmOgrenci";
+            this.Text = "Soru Çözüm Ekranı";
             ((System.ComponentModel.ISupportInitialize)(this.PBSoru)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

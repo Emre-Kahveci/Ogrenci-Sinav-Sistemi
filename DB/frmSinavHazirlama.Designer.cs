@@ -34,7 +34,7 @@
             this.rTxtSoruMetin = new System.Windows.Forms.RichTextBox();
             this.lblA = new System.Windows.Forms.Label();
             this.txtSinavID = new System.Windows.Forms.TextBox();
-            this.txtB = new System.Windows.Forms.TextBox();
+            this.txtSinavSuresi = new System.Windows.Forms.TextBox();
             this.lblB = new System.Windows.Forms.Label();
             this.txtC = new System.Windows.Forms.TextBox();
             this.lblC = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.lblSinavID = new System.Windows.Forms.Label();
             this.btnSinaviOlustur = new System.Windows.Forms.Button();
             this.lblSure = new System.Windows.Forms.Label();
-            this.txtSinavSuresi = new System.Windows.Forms.TextBox();
+            this.txtB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBSoru)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,13 +102,12 @@
             this.txtSinavID.Size = new System.Drawing.Size(72, 20);
             this.txtSinavID.TabIndex = 5;
             // 
-            // txtB
+            // txtSinavSuresi
             // 
-            this.txtB.Location = new System.Drawing.Point(248, 134);
-            this.txtB.Name = "txtB";
-            this.txtB.ReadOnly = true;
-            this.txtB.Size = new System.Drawing.Size(346, 20);
-            this.txtB.TabIndex = 7;
+            this.txtSinavSuresi.Location = new System.Drawing.Point(79, 160);
+            this.txtSinavSuresi.Name = "txtSinavSuresi";
+            this.txtSinavSuresi.Size = new System.Drawing.Size(54, 20);
+            this.txtSinavSuresi.TabIndex = 7;
             // 
             // lblB
             // 
@@ -208,20 +207,21 @@
             this.lblSure.TabIndex = 17;
             this.lblSure.Text = "Sınav Süresi";
             // 
-            // txtSinavSuresi
+            // txtB
             // 
-            this.txtSinavSuresi.Location = new System.Drawing.Point(79, 161);
-            this.txtSinavSuresi.Name = "txtSinavSuresi";
-            this.txtSinavSuresi.Size = new System.Drawing.Size(53, 20);
-            this.txtSinavSuresi.TabIndex = 18;
-            this.txtSinavSuresi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSinavSuresi_KeyPress);
+            this.txtB.Location = new System.Drawing.Point(248, 135);
+            this.txtB.Name = "txtB";
+            this.txtB.ReadOnly = true;
+            this.txtB.Size = new System.Drawing.Size(346, 20);
+            this.txtB.TabIndex = 18;
+            this.txtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSinavSuresi_KeyPress);
             // 
             // frmSinavHazirlama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 217);
-            this.Controls.Add(this.txtSinavSuresi);
+            this.Controls.Add(this.txtB);
             this.Controls.Add(this.lblSure);
             this.Controls.Add(this.btnSinaviOlustur);
             this.Controls.Add(this.lblSinavID);
@@ -232,7 +232,7 @@
             this.Controls.Add(this.lblD);
             this.Controls.Add(this.txtC);
             this.Controls.Add(this.lblC);
-            this.Controls.Add(this.txtB);
+            this.Controls.Add(this.txtSinavSuresi);
             this.Controls.Add(this.lblB);
             this.Controls.Add(this.txtSinavID);
             this.Controls.Add(this.lblA);
@@ -241,7 +241,7 @@
             this.Controls.Add(this.lblSoruID);
             this.Controls.Add(this.txtSoruID);
             this.Name = "frmSinavHazirlama";
-            this.Text = "frmSinavHazirlama";
+            this.Text = "Sınav Hazırlama Ekranı";
             ((System.ComponentModel.ISupportInitialize)(this.PBSoru)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,7 +256,7 @@
         private System.Windows.Forms.RichTextBox rTxtSoruMetin;
         private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.TextBox txtSinavID;
-        private System.Windows.Forms.TextBox txtB;
+        private System.Windows.Forms.TextBox txtSinavSuresi;
         private System.Windows.Forms.Label lblB;
         private System.Windows.Forms.TextBox txtC;
         private System.Windows.Forms.Label lblC;
@@ -268,6 +268,6 @@
         private System.Windows.Forms.Label lblSinavID;
         private System.Windows.Forms.Button btnSinaviOlustur;
         private System.Windows.Forms.Label lblSure;
-        private System.Windows.Forms.TextBox txtSinavSuresi;
+        private System.Windows.Forms.TextBox txtB;
     }
 }
