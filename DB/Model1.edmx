@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kisi">
+          <Key>
+            <PropertyRef Name="okulNo" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="eMail" Type="nchar" MaxLength="100" />
+          <Property Name="Sifre" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ad" Type="nchar" MaxLength="100" />
+          <Property Name="Soyad" Type="nchar" MaxLength="100" />
+          <Property Name="okulNo" Type="int" Nullable="false" />
+          <Property Name="userType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sinav">
+          <Key>
+            <PropertyRef Name="sinavID" />
+          </Key>
+          <Property Name="sinavID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="soruIDler" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="soruSayisi" Type="int" Nullable="false" />
+          <Property Name="sinavSuresi" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'test.dbo.sinavSonuclari' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="sinavSonuclari">
+          <Key>
+            <PropertyRef Name="sinavTarih" />
+            <PropertyRef Name="okulNo" />
+            <PropertyRef Name="soruSayisi" />
+            <PropertyRef Name="dogruSayisi" />
+            <PropertyRef Name="yanlisSayisi" />
+          </Key>
+          <Property Name="sinavTarih" Type="datetime" Nullable="false" />
+          <Property Name="okulNo" Type="int" Nullable="false" />
+          <Property Name="soruSayisi" Type="int" Nullable="false" />
+          <Property Name="dogruSayisi" Type="int" Nullable="false" />
+          <Property Name="yanlisSayisi" Type="int" Nullable="false" />
+          <Property Name="dogruYapilanSorular" Type="varchar" MaxLength="100" />
+          <Property Name="yanlisYapilanSorular" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Soru">
+          <Key>
+            <PropertyRef Name="soruID" />
+          </Key>
+          <Property Name="soruID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="soruMetin" Type="varchar" MaxLength="1500" />
+          <Property Name="soruUnite" Type="int" Nullable="false" />
+          <Property Name="soruKonu" Type="int" Nullable="false" />
+          <Property Name="dogruCevap" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="yanlisCevap1" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="yanlisCevap2" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="yanlisCevap3" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="resim" Type="image" />
+        </EntityType>
+        <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="Kisi" EntityType="Self.Kisi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sinav" EntityType="Self.Sinav" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Soru" EntityType="Self.Soru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sinavSonuclari" EntityType="Self.sinavSonuclari" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [sinavSonuclari].[sinavTarih] AS [sinavTarih], 
+    [sinavSonuclari].[okulNo] AS [okulNo], 
+    [sinavSonuclari].[soruSayisi] AS [soruSayisi], 
+    [sinavSonuclari].[dogruSayisi] AS [dogruSayisi], 
+    [sinavSonuclari].[yanlisSayisi] AS [yanlisSayisi], 
+    [sinavSonuclari].[dogruYapilanSorular] AS [dogruYapilanSorular], 
+    [sinavSonuclari].[yanlisYapilanSorular] AS [yanlisYapilanSorular]
+    FROM [dbo].[sinavSonuclari] AS [sinavSonuclari]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kisi">
+          <Key>
+            <PropertyRef Name="okulNo" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="eMail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Soyad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="okulNo" Type="Int32" Nullable="false" />
+          <Property Name="userType" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sinav">
+          <Key>
+            <PropertyRef Name="sinavID" />
+          </Key>
+          <Property Name="sinavID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="soruIDler" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="soruSayisi" Type="Int32" Nullable="false" />
+          <Property Name="sinavSuresi" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Soru">
+          <Key>
+            <PropertyRef Name="soruID" />
+          </Key>
+          <Property Name="soruID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="soruMetin" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="soruUnite" Type="Int32" Nullable="false" />
+          <Property Name="soruKonu" Type="Int32" Nullable="false" />
+          <Property Name="dogruCevap" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yanlisCevap1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yanlisCevap2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yanlisCevap3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="resim" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sinavSonuclari">
+          <Key>
+            <PropertyRef Name="sinavTarih" />
+            <PropertyRef Name="okulNo" />
+            <PropertyRef Name="soruSayisi" />
+            <PropertyRef Name="dogruSayisi" />
+            <PropertyRef Name="yanlisSayisi" />
+          </Key>
+          <Property Name="sinavTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="okulNo" Type="Int32" Nullable="false" />
+          <Property Name="soruSayisi" Type="Int32" Nullable="false" />
+          <Property Name="dogruSayisi" Type="Int32" Nullable="false" />
+          <Property Name="yanlisSayisi" Type="Int32" Nullable="false" />
+          <Property Name="dogruYapilanSorular" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="yanlisYapilanSorular" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kisis" EntityType="Self.Kisi" />
+          <EntitySet Name="Sinavs" EntityType="Self.Sinav" />
+          <EntitySet Name="Sorus" EntityType="Self.Soru" />
+          <EntitySet Name="sinavSonuclaris" EntityType="Self.sinavSonuclari" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities">
+          <EntitySetMapping Name="Kisis">
+            <EntityTypeMapping TypeName="testModel.Kisi">
+              <MappingFragment StoreEntitySet="Kisi">
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="okulNo" ColumnName="okulNo" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sinavs">
+            <EntityTypeMapping TypeName="testModel.Sinav">
+              <MappingFragment StoreEntitySet="Sinav">
+                <ScalarProperty Name="sinavSuresi" ColumnName="sinavSuresi" />
+                <ScalarProperty Name="sinavID" ColumnName="sinavID" />
+                <ScalarProperty Name="soruIDler" ColumnName="soruIDler" />
+                <ScalarProperty Name="soruSayisi" ColumnName="soruSayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sorus">
+            <EntityTypeMapping TypeName="testModel.Soru">
+              <MappingFragment StoreEntitySet="Soru">
+                <ScalarProperty Name="soruID" ColumnName="soruID" />
+                <ScalarProperty Name="soruMetin" ColumnName="soruMetin" />
+                <ScalarProperty Name="soruUnite" ColumnName="soruUnite" />
+                <ScalarProperty Name="soruKonu" ColumnName="soruKonu" />
+                <ScalarProperty Name="dogruCevap" ColumnName="dogruCevap" />
+                <ScalarProperty Name="yanlisCevap1" ColumnName="yanlisCevap1" />
+                <ScalarProperty Name="yanlisCevap2" ColumnName="yanlisCevap2" />
+                <ScalarProperty Name="yanlisCevap3" ColumnName="yanlisCevap3" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sinavSonuclaris">
+            <EntityTypeMapping TypeName="testModel.sinavSonuclari">
+              <MappingFragment StoreEntitySet="sinavSonuclari">
+                <ScalarProperty Name="sinavTarih" ColumnName="sinavTarih" />
+                <ScalarProperty Name="okulNo" ColumnName="okulNo" />
+                <ScalarProperty Name="soruSayisi" ColumnName="soruSayisi" />
+                <ScalarProperty Name="dogruSayisi" ColumnName="dogruSayisi" />
+                <ScalarProperty Name="yanlisSayisi" ColumnName="yanlisSayisi" />
+                <ScalarProperty Name="dogruYapilanSorular" ColumnName="dogruYapilanSorular" />
+                <ScalarProperty Name="yanlisYapilanSorular" ColumnName="yanlisYapilanSorular" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
