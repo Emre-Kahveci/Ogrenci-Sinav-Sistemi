@@ -26,14 +26,15 @@ namespace DB
         int yanlisSayisi = 0;
         string yanlisYapilanSorular = "";
         string[] cozulmusSorular;
-        bool calis;
         int rastgeleSayi;
+        List<int> cozulebilirSoruListesi = new List<int>();
         public static testEntities TestEntities { get; set; }
         public frmSoruCozum()
         {
             InitializeComponent();
             TestEntities = new testEntities();
             ToplamSoruSayisi = TestEntities.Sorus.Count();
+            cozulebilirSoruListesi = Enumerable.Range(1, ToplamSoruSayisi).ToList();
             soruSayisi = frmOgrenci.coozmekIstenilenSoruSayisi;
             LabelGuncelle(labelDurum);
             cozulmusSorularListe();
@@ -155,23 +156,14 @@ namespace DB
                 }
             }
             cozulmusSorular = list.ToArray();
+            foreach (string cozus in cozulmusSorular)
+            {
+                cozulebilirSoruListesi.Remove(Convert.ToInt32(cozus));
+            }
         }
         public string[] SoruGetir()
         {
-            calis = true;
-            while (calis)
-            {
-                calis = false;
-                rastgeleSayi = rnd.Next(1, ToplamSoruSayisi + 1);
-                foreach (string soruId in cozulmusSorular)
-                {
-                    if (soruId == rastgeleSayi.ToString())
-                    {
-                        calis = true;
-                        break;
-                    }
-                }
-            }
+            rastgeleSayi = rnd.Next(cozulebilirSoruListesi.Count);
 
             var item = TestEntities.Sorus.Where(soru => soru.soruID == rastgeleSayi).FirstOrDefault();
             byte[] arr = item.resim;
