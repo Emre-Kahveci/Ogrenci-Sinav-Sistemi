@@ -40,7 +40,7 @@ namespace DB
         {
             rTxtGecmisSinavlar.Text = "";
             Control control = (Control)(btnGecmisSinavlar as Button).Parent;
-            control.Size = new Size(330, 330);
+            control.Size = new Size(330, 373);
             okulNo = frmGiris.okulNo;
             testEntities testEntities = new testEntities();
             var item = testEntities.sinavSonuclaris.Where(sinav => sinav.okulNo == okulNo).ToArray();
