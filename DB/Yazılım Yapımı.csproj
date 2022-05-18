@@ -97,6 +97,12 @@
     <Compile Include="frmSinavHazirlama.Designer.cs">
       <DependentUpon>frmSinavHazirlama.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSinavSorumlusu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSinavSorumlusu.Designer.cs">
+      <DependentUpon>frmSinavSorumlusu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSoruCozum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSinavHazirlama.resx">
       <DependentUpon>frmSinavHazirlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSinavSorumlusu.resx">
+      <DependentUpon>frmSinavSorumlusu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSoruCozum.resx">
       <DependentUpon>frmSoruCozum.cs</DependentUpon>

@@ -39,7 +39,8 @@ namespace DB
                         break;
                     case "1":
                         msg += "Sınav Sorumlusu";
-                        //TODO: Sınav Sorumlu
+                        frmSinavSorumlusu frmSinavSorumlusu = new frmSinavSorumlusu();
+                        frmSinavSorumlusu.Show();
                         break;
                     case "2":
                         msg += "Öğrenci";
