@@ -12,7 +12,7 @@
 2) Doğru şıkkın işaretlenmiş olması lazım
 3) Cevap şıklarının hepsinin dolu olması lazım
 4) Ünite ve konu numarası girilmeli
-* Sınav Hazırla kısmından sistemde bulunan sorualardan seçeceğiniz bir kombinasyonla bir sınav oluşturabilirsiniz, sınav oluştururken dikkat edilmesi gereken bazı korumalar mevcuttur bunlar;
+* Sınav Hazırla kısmından sistemde bulunan sorulardan seçeceğiniz bir kombinasyonla bir sınav oluşturabilirsiniz, sınav oluştururken dikkat edilmesi gereken bazı korumalar mevcuttur bunlar;
 1) Sınavın adı olmadı
 2) Sınavın süresi belirlenmeli
 * Adminler istediği öğrencinin okul nosunu girerek geçmiş sınavlarını görebilirler.
@@ -26,3 +26,8 @@
 * Raporda; daha önce çözdüğünüz sorular hakkında Ünite ve Konulara bölünmüş şekilde çözdüğünüz soru sayısı ve doğru/yanlış sayılarınızı görebilirsiniz.
 * İsterseniz raporunuzun fiziksel çıktısını alabilirsiniz
 * Ayrıca geçmiş sınav seçeneğine tıklayarak önceki sınavlarınızın küçük bir yazılı analizine erişebilirsiniz.
+
+# Sınav Sorumlusu Yardım
+* Sınav Hazırla kısmından sistemde bulunan sorulardan seçeceğiniz bir kombinasyonla bir sınav oluşturabilirsiniz, sınav oluştururken dikkat edilmesi gereken bazı korumalar mevcuttur bunlar;
+1) Sınavın adı olmadı
+2) Sınavın süresi belirlenmeli
